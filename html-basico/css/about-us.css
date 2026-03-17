@@ -1,6 +1,15 @@
+:root {
+    --font-default: "Bitcount Grid Double Ink", system-ui;
+
+    --color-primary: #333333;
+    --color-bkg-figures: #e41c1c;
+    --color-border: #4cac48;
+}
+
+
 body {
-    color: #333333;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: var(--color-primary);
+    font-family: var(--font-default);
     margin-left: auto;
     margin-right: auto;
     width: 940px;
@@ -17,8 +26,8 @@ h2 {
 }
 
 figure {
-    background-color: #F2EDED;
-    border: 1px solid #CCC;
+    background-color: var(--color-bkg-figures);
+    border: var(--color-border);
     text-align: center;
     padding: 15px;
     margin: 30px;
