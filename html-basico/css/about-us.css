@@ -6,6 +6,9 @@
     --color-border: #4cac48;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     color: var(--color-primary);
