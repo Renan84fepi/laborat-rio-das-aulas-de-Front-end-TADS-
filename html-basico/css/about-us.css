@@ -1,11 +1,41 @@
+/* =========================
+   RESET CSS
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   VARIÁVEIS
+========================= */
 :root {
     --font-default: "Bitcount Grid Double Ink", system-ui;
 
     --color-primary: #333333;
     --color-bkg-figures: #e41c1c;
     --color-border: #4cac48;
+    --color-light: #f1f1f1;
 }
 
+/* =========================
+   GLOBAL
+========================= */
 html {
     scroll-behavior: smooth;
 }
@@ -13,9 +43,19 @@ html {
 body {
     color: var(--color-primary);
     font-family: var(--font-default);
-    margin-left: auto;
-    margin-right: auto;
     width: 940px;
+    margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    margin-bottom: 10px;
+}
+
+header img {
+    margin-bottom: 10px;
 }
 
 h1 {
@@ -23,14 +63,56 @@ h1 {
     padding: 10px;
 }
 
-h2 {
-    border-bottom: 2px groove #333333;
+/* =========================
+   NAV
+========================= */
+nav {
+    background-color: #eee;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
+main {
+    display: flex;
+    gap: 20px;
+}
+
+article {
+    flex: 3;
+}
+
+aside {
+    flex: 1;
+    background-color: var(--color-light);
+    padding: 15px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section {
     margin-top: 30px;
 }
 
+h2 {
+    border-bottom: 2px groove #333;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   FIGURES
+========================= */
 figure {
     background-color: var(--color-bkg-figures);
-    border: var(--color-border);
+    border: 2px solid var(--color-border);
     text-align: center;
     padding: 15px;
     margin: 30px;
@@ -38,28 +120,33 @@ figure {
 
 figcaption {
     font-style: italic;
-    margin: 10px;
+    margin-top: 10px;
 }
 
-#centro-distribuicao{
-    margin-left: auto;
-    margin-right: auto;
+/* Centro de distribuição centralizado */
+#centro-distribuicao {
     width: 550px;
+    margin: 30px auto;
 }
 
-#rodape {
-    color: #777;
-    margin: 30px 0;
-    padding: 30px 0;
-}
-
-#rodape img {
-    margin-right: 30px;
-    vertical-align: middle;
-    width: 94px;
-}
-
+/* Imagem flutuando */
 #familia-pelho {
     float: right;
     margin: 0 0 10px 10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    color: #777;
+    margin: 30px 0;
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+}
+
+footer img {
+    width: 94px;
+    margin-right: 30px;
+    vertical-align: middle;
 }
