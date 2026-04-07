@@ -22,7 +22,7 @@ a {
 }
 
 /* =========================
-   VARIÁVEIS
+   VARIÁVEIS (ADICIONADAS SEM QUEBRAR AS SUAS)
 ========================= */
 :root {
     --font-default: "Bitcount Grid Double Ink", system-ui;
@@ -31,6 +31,16 @@ a {
     --color-bkg-figures: #e41c1c;
     --color-border: #4cac48;
     --color-light: #f1f1f1;
+
+    /* NOVAS (do professor, sem alterar suas cores) */
+    --color-footer: #777;
+    --logo-width: 94px;
+
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 32px;
+
+    --border-width: 1px;
 }
 
 /* =========================
@@ -58,6 +68,13 @@ header img {
     margin-bottom: 10px;
 }
 
+/* pequeno upgrade (não quebra nada) */
+.container-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
 h1 {
     background-image: url(../img/sobre-background.jpg);
     padding: 10px;
@@ -72,8 +89,13 @@ nav {
     margin-bottom: 20px;
 }
 
+/* melhoria leve */
+nav ul {
+    display: flex;
+    gap: 15px;
+}
+
 nav a {
-    margin-right: 15px;
     font-weight: bold;
 }
 
@@ -123,30 +145,36 @@ figcaption {
     margin-top: 10px;
 }
 
-/* Centro de distribuição centralizado */
 #centro-distribuicao {
     width: 550px;
     margin: 30px auto;
 }
 
-/* Imagem flutuando */
 #familia-pelho {
     float: right;
     margin: 0 0 10px 10px;
 }
 
 /* =========================
-   FOOTER
+   FOOTER NOVO (SEM MUDAR VISUAL)
 ========================= */
-footer {
-    color: #777;
+.footer {
+    color: var(--color-footer);
     margin: 30px 0;
     padding: 30px 0;
     border-top: 1px solid #ccc;
 }
 
-footer img {
-    width: 94px;
+.footer__container {
+    display: flex;
+    align-items: center;
+}
+
+.footer__logo {
+    width: var(--logo-width);
     margin-right: 30px;
-    vertical-align: middle;
+}
+
+.footer__text {
+    font-size: 1rem;
 }
