@@ -18,78 +18,83 @@
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="container-header">
-            <img src="img/logo.png" alt="Logo da empresa Mirror Fashion">
-            <h1>Sobre a Empresa</h1>
+    <!-- ✅ HEADER (COMPONENTE) -->
+    <header class="header">
+        <div class="header__container">
+            <img src="img/logo.png" alt="Logo da empresa Mirror Fashion" class="header__logo">
+            <h1 class="header__title">Sobre a Empresa</h1>
         </div>
     </header>
 
-    <!-- NAV -->
-    <nav aria-label="Navegação principal">
-        <ul>
-            <li><a href="index.html">Nossa Loja</a></li>
-            <li><a href="#historia">História</a></li>
-            <li><a href="#diferenciais">Diferenciais</a></li>
+    <!-- ✅ NAV (COMPONENTE) -->
+    <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+            <li class="nav__item"><a href="index.html" class="nav__link">Nossa Loja</a></li>
+            <li class="nav__item"><a href="#historia" class="nav__link">História</a></li>
+            <li class="nav__item"><a href="#diferenciais" class="nav__link">Diferenciais</a></li>
         </ul>
     </nav>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main>
+    <!-- ✅ MAIN LAYOUT (COMPONENTE) -->
+    <main class="main">
 
-        <article>
+        <!-- ✅ ARTICLE (COMPONENTE) -->
+        <article class="article">
 
-            <!-- INTRODUÇÃO -->
-            <section aria-labelledby="titulo-introducao">
-                <h2 id="titulo-introducao">Quem somos</h2>
+            <!-- ✅ SECTION INTRO (COMPONENTE) -->
+            <section class="section" aria-labelledby="titulo-introducao">
+                <h2 class="section__title" id="titulo-introducao">Quem somos</h2>
 
-                <figure id="centro-distribuicao">
-                    <img src="img/centro-distribuicao.png" alt="Centro de distribuição da empresa">
-                    <figcaption>Centro de Distribuição da Empresa</figcaption>
+                <figure class="figure figure--large">
+                    <img src="img/centro-distribuicao.png" alt="Centro de distribuição da empresa" class="figure__image">
+                    <figcaption class="figure__caption">Centro de Distribuição da Empresa</figcaption>
                 </figure>
 
-                <p>
-                    A <strong>Mirror Fashion</strong> é uma companhia líder no mercado, oferecendo produtos de alta qualidade.
-                </p>
+                <div class="section__content">
+                    <p class="paragraph">
+                        A <strong>Mirror Fashion</strong> é uma companhia líder no mercado, oferecendo produtos de alta qualidade.
+                    </p>
 
-                <p>
-                    Fundada com o objetivo de transformar o setor, a empresa investe constantemente em tecnologia.
-                </p>
+                    <p class="paragraph">
+                        Fundada com o objetivo de transformar o setor, a empresa investe constantemente em tecnologia.
+                    </p>
 
-                <p>
-                    Conheça também 
-                    <a href="index.html">nossa loja</a>, 
-                    nossa <a href="#historia">história</a>
-                    e nossos <a href="#diferenciais">diferenciais</a>.
-                </p>
+                    <p class="paragraph">
+                        Conheça também 
+                        <a href="index.html">nossa loja</a>, 
+                        nossa <a href="#historia">história</a>
+                        e nossos <a href="#diferenciais">diferenciais</a>.
+                    </p>
+                </div>
             </section>
 
-            <!-- HISTÓRIA -->
-            <section id="historia" aria-labelledby="titulo-historia">
-                <h2 id="titulo-historia">História</h2>
+            <!-- ✅ SECTION HISTÓRIA (COMPONENTE) -->
+            <section class="section" id="historia" aria-labelledby="titulo-historia">
+                <h2 class="section__title" id="titulo-historia">História</h2>
 
-                <figure id="familia-pelho">
-                    <img src="img/familia-pelho.jpg" alt="Família fundadora da empresa">
-                    <figcaption>Família Pelho</figcaption>
+                <figure class="figure figure--float">
+                    <img src="img/familia-pelho.jpg" alt="Família fundadora da empresa" class="figure__image">
+                    <figcaption class="figure__caption">Família Pelho</figcaption>
                 </figure>
 
-                <p>A fundação em 1932 ocorreu no interior do Paraná.</p>
-                <p>A empresa cresceu rapidamente e se tornou global.</p>
-                <p>Hoje é referência mundial.</p>
+                <div class="section__content">
+                    <p class="paragraph">A fundação em 1932 ocorreu no interior do Paraná.</p>
+                    <p class="paragraph">A empresa cresceu rapidamente e se tornou global.</p>
+                    <p class="paragraph">Hoje é referência mundial.</p>
+                </div>
             </section>
 
-            <!-- DIFERENCIAIS -->
-            <section id="diferenciais" aria-labelledby="titulo-diferenciais">
-                <h2 id="titulo-diferenciais">Diferenciais</h2>
+            <!-- ✅ SECTION DIFERENCIAIS (COMPONENTE) -->
+            <section class="section" id="diferenciais" aria-labelledby="titulo-diferenciais">
+                <h2 class="section__title" id="titulo-diferenciais">Diferenciais</h2>
 
-                <ul>
-                    <li>Menor preço do varejo</li>
-                    <li>Se encontrar mais barato, leva grátis</li>
-                    <li>Pague em diversas moedas</li>
-                    <li>Frete grátis mundial</li>
-                    <li>Maior e-commerce de moda</li>
-                    <li>
+                <ul class="list list--features">
+                    <li class="list__item">Menor preço do varejo</li>
+                    <li class="list__item">Se encontrar mais barato, leva grátis</li>
+                    <li class="list__item">Pague em diversas moedas</li>
+                    <li class="list__item">Frete grátis mundial</li>
+                    <li class="list__item">Maior e-commerce de moda</li>
+                    <li class="list__item">
                         Atendimento via 
                         <a href="tel:+55984441265">telefone</a> e 
                         <a href="mailto:loja@exemplo.com">email</a>
@@ -99,22 +104,22 @@
 
         </article>
 
-        <!-- ASIDE -->
-        <aside>
-            <h2>Informações Extras</h2>
+        <!-- ✅ ASIDE (COMPONENTE) -->
+        <aside class="sidebar">
+            <h2 class="sidebar__title">Informações Extras</h2>
 
-            <section>
-                <p>Confira promoções exclusivas.</p>
+            <section class="sidebar__section">
+                <p class="sidebar__text">Confira promoções exclusivas.</p>
             </section>
 
-            <section>
-                <p>Assine nossa newsletter.</p>
+            <section class="sidebar__section">
+                <p class="sidebar__text">Assine nossa newsletter.</p>
             </section>
         </aside>
 
     </main>
 
-    <!-- ✅ FOOTER NOVO (PADRÃO PROFESSOR) -->
+    <!-- ✅ FOOTER (PADRÃO PROFESSOR) -->
     <footer class="footer">
         <div class="footer__container">
             <img src="img/logo.png" alt="Logomarca da loja" class="footer__logo">

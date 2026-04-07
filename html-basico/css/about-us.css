@@ -22,25 +22,39 @@ a {
 }
 
 /* =========================
-   VARIÁVEIS (ADICIONADAS SEM QUEBRAR AS SUAS)
+   VARIÁVEIS (DESIGN SYSTEM)
 ========================= */
 :root {
+    /* TIPOGRAFIA */
     --font-default: "Bitcount Grid Double Ink", system-ui;
-
+    --font-secondary: "Roboto", sans-serif;
+    
+    /* CORES */
     --color-primary: #333333;
-    --color-bkg-figures: #e41c1c;
-    --color-border: #4cac48;
+    --color-secondary: #777;
+    --color-accent-red: #e41c1c;
+    --color-accent-green: #4cac48;
     --color-light: #f1f1f1;
-
-    /* NOVAS (do professor, sem alterar suas cores) */
-    --color-footer: #777;
-    --logo-width: 94px;
-
+    --color-border: #ccc;
+    
+    /* ESPAÇAMENTO */
     --space-1: 8px;
     --space-2: 16px;
     --space-3: 32px;
-
+    --space-4: 48px;
+    
+    /* DIMENSÕES */
+    --logo-width: 94px;
+    --max-width: 940px;
     --border-width: 1px;
+    
+    /* TIPOGRAFIA */
+    --fs-small: 0.875rem;
+    --fs-base: 1rem;
+    --fs-large: 1.25rem;
+    
+    --fw-normal: 400;
+    --fw-bold: 900;
 }
 
 /* =========================
@@ -53,128 +67,290 @@ html {
 body {
     color: var(--color-primary);
     font-family: var(--font-default);
-    width: 940px;
+    max-width: var(--max-width);
     margin: 0 auto;
+    padding: 0 var(--space-2);
 }
 
 /* =========================
-   HEADER
+   HEADER (COMPONENTE)
 ========================= */
-header {
-    margin-bottom: 10px;
+.header {
+    margin-bottom: var(--space-2);
 }
 
-header img {
-    margin-bottom: 10px;
-}
-
-/* pequeno upgrade (não quebra nada) */
-.container-header {
+.header__container {
     display: flex;
     align-items: center;
     gap: var(--space-2);
+    flex-wrap: wrap;
 }
 
-h1 {
+.header__logo {
+    width: var(--logo-width);
+    height: auto;
+}
+
+.header__title {
     background-image: url(../img/sobre-background.jpg);
-    padding: 10px;
+    padding: var(--space-2);
+    font-size: var(--fs-large);
 }
 
 /* =========================
-   NAV
+   NAV (COMPONENTE)
 ========================= */
-nav {
+.nav {
     background-color: #eee;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: var(--space-2);
+    margin-bottom: var(--space-3);
+    border-radius: 4px;
 }
 
-/* melhoria leve */
-nav ul {
+.nav__list {
     display: flex;
-    gap: 15px;
+    gap: var(--space-3);
+    flex-wrap: wrap;
 }
 
-nav a {
-    font-weight: bold;
+.nav__item {
+    display: flex;
+    align-items: center;
+}
+
+.nav__link {
+    font-weight: var(--fw-bold);
+    transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+    color: var(--color-accent-red);
 }
 
 /* =========================
-   LAYOUT PRINCIPAL
+   MAIN LAYOUT (COMPONENTE)
 ========================= */
-main {
+.main {
     display: flex;
-    gap: 20px;
+    gap: var(--space-3);
+    flex-wrap: wrap;
 }
 
-article {
+.article {
     flex: 3;
+    min-width: 250px;
 }
 
-aside {
+.sidebar {
     flex: 1;
     background-color: var(--color-light);
-    padding: 15px;
+    padding: var(--space-2);
+    border-radius: 4px;
+    min-width: 200px;
 }
 
 /* =========================
-   SECTIONS
+   SIDEBAR (COMPONENTE)
 ========================= */
-section {
-    margin-top: 30px;
+.sidebar__title {
+    font-size: var(--fs-large);
+    margin-bottom: var(--space-2);
+    border-bottom: var(--border-width) solid var(--color-border);
+    padding-bottom: var(--space-1);
 }
 
-h2 {
-    border-bottom: 2px groove #333;
-    margin-bottom: 10px;
+.sidebar__section {
+    margin-bottom: var(--space-2);
+}
+
+.sidebar__text {
+    font-size: var(--fs-base);
+    line-height: 1.6;
 }
 
 /* =========================
-   FIGURES
+   SECTION (COMPONENTE)
 ========================= */
-figure {
-    background-color: var(--color-bkg-figures);
-    border: 2px solid var(--color-border);
+.section {
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+
+.section__title {
+    border-bottom: 2px groove var(--color-primary);
+    margin-bottom: var(--space-2);
+    padding-bottom: var(--space-1);
+    font-size: var(--fs-large);
+}
+
+.section__content {
+    line-height: 1.6;
+}
+
+/* =========================
+   PARAGRAPH (COMPONENTE)
+========================= */
+.paragraph {
+    margin-bottom: var(--space-2);
+    font-size: var(--fs-base);
+    line-height: 1.8;
+}
+
+.paragraph:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================
+   FIGURE (COMPONENTE)
+========================= */
+.figure {
+    background-color: var(--color-accent-red);
+    border: 2px solid var(--color-accent-green);
     text-align: center;
-    padding: 15px;
-    margin: 30px;
+    padding: var(--space-2);
+    margin: var(--space-3);
+    border-radius: 4px;
 }
 
-figcaption {
-    font-style: italic;
-    margin-top: 10px;
+.figure--large {
+    width: 100%;
+    max-width: 550px;
+    margin: var(--space-3) auto;
 }
 
-#centro-distribuicao {
-    width: 550px;
-    margin: 30px auto;
-}
-
-#familia-pelho {
+.figure--float {
     float: right;
-    margin: 0 0 10px 10px;
+    margin: -20px 0 var(--space-2) var(--space-2);
+    width: 100%;
+    max-width: 300px;
+}
+
+.figure__image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.figure__caption {
+    font-style: italic;
+    margin-top: var(--space-0);
+    font-size: var(--fs-small);
 }
 
 /* =========================
-   FOOTER NOVO (SEM MUDAR VISUAL)
+   LIST (COMPONENTE)
+========================= */
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list--features {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.list__item {
+    padding: var(--space-1) var(--space-2);
+    border-left: 4px solid var(--color-accent-green);
+    background-color: rgba(76, 172, 72, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.list__item:hover {
+    background-color: rgba(76, 172, 72, 0.1);
+}
+
+.list__item a {
+    color: var(--color-accent-red);
+    font-weight: var(--fw-bold);
+}
+
+.list__item a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   FOOTER (COMPONENTE - PADRÃO PROFESSOR)
 ========================= */
 .footer {
-    color: var(--color-footer);
-    margin: 30px 0;
-    padding: 30px 0;
-    border-top: 1px solid #ccc;
+    color: var(--color-secondary);
+    margin-top: var(--space-4);
+    padding: var(--space-3) 0;
+    border-top: var(--border-width) solid var(--color-border);
 }
 
 .footer__container {
     display: flex;
     align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
 }
 
 .footer__logo {
     width: var(--logo-width);
-    margin-right: 30px;
+    height: auto;
+    flex-shrink: 0;
 }
 
 .footer__text {
-    font-size: 1rem;
+    font-size: var(--fs-base);
+    line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVO (MOBILE)
+========================= */
+@media (max-width: 768px) {
+    body {
+        padding: var(--space-1);
+    }
+
+    .main {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    .article,
+    .sidebar {
+        flex: 1 1 100%;
+        min-width: auto;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: var(--space-1);
+    }
+
+    .header__container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .figure--float {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        margin: var(--space-2) 0;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --space-2: 12px;
+        --space-3: 24px;
+    }
+
+    .header__title {
+        font-size: 1.1rem;
+    }
+
+    .section__title {
+        font-size: 1.1rem;
+    }
 }
